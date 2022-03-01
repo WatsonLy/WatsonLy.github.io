@@ -27,7 +27,7 @@
           //    \\_____/
           W       W</pre>
 
-      <script src="node_modules/three/build/three.js"></script>
+      <script src="./node_modules/three/build/three.js"></script>
       <script>
 		  //import * as THREE from "./node_modules/three/build/three.js";
 		  //import { APP } from "./node_modules/three/build/app.js";
