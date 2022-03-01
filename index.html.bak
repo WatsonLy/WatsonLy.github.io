@@ -28,22 +28,28 @@
           W       W</pre>
 
       <script src="node_modules/three/build/three.js"></script>
-
       <script>
-
+		  //import * as THREE from "./node_modules/three/build/three.js";
+		  //import { APP } from "./node_modules/three/build/app.js";
+		  //import { VRButton } from "./node_modules/three/build/VRButton.js";
+		  
           var camera = new THREE.PerspectiveCamera( 5, window.innerWidth/window.innerHeight, 0.1, 1000 )
           camera.position.z = 50;
 
+          //create scene
           var scene = new THREE.Scene();
           
+          //Ambient lighting and add to scene
           scene.background = new THREE.Color( 0x000000 );
           const ambient = new THREE.HemisphereLight( 0xffffff, 0xbbbbff, 0.3 );
 		      scene.add( ambient );    
 
+          //Let there be light and add to scene
           const light = new THREE.DirectionalLight();
 		      light.position.set( 0.2, 1, 1.5 );
 		      scene.add( light );  
 
+          //create renderer object
           var renderer = new THREE.WebGLRenderer();
           renderer.setSize( window.innerWidth, window.innerHeight );
           document.body.appendChild(renderer.domElement);
@@ -51,8 +57,8 @@
           //create shape
           var geometry = new THREE.TorusKnotBufferGeometry(1, 0.2, 100, 50);
 
-          //create mesh material
-          var mat = new THREE.MeshPhongMaterial( { color: 0xdbe4eb, specular: 0x444444, shininess: 1000} );
+          //create mesh material and add to scene
+          var mat = new THREE.MeshPhongMaterial( { color: 0x8A2BE2, specular: 0x444444, shininess: 60} );
           var object = new THREE.Mesh( geometry, mat);
           scene.add( object );
 
